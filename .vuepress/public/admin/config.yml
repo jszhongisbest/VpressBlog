@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: SidStraw/VpressBlog   # Path to your GitHub repository
+  repo: jszhongisbest/VpressBlog   # Path to your GitHub repository
 
 locale: 'zh_Hant'
 
