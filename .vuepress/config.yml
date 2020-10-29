@@ -1,5 +1,7 @@
-title: 這可得好好管管
-description: 吸管就是拿來Sid
+title: 山谷先生的投資獲利美學
+description: |-
+  不教你取巧的投資方式，只教你正確的投資觀念。
+  只給你簡單易懂的投資知識，讓你不再盲目的地「靠感覺」投資。
 head:
   - - meta
     - name: viewport
@@ -15,7 +17,7 @@ locales:
     lang: zh-TW
 themeConfig:
   heroImage: ""
-  disqus: codeshop-1
+  disqus: ""
   nav:
     - text: Home
       link: /
@@ -23,27 +25,21 @@ themeConfig:
     - text: What's VuePress
       link: /2020/05/10/vuepress-introduction/
       icon: mdi-vuejs
-    - text: YB
-      link: https://i.youbike.com.tw/home
-      icon: mdi-vuejs
   color:
-    $accentColor: "#99B7A3"
-    $secondaryColor: "#84969C"
+    $accentColor: "#00ad8d"
+    $secondaryColor: "#1792cd"
   summary: true
-  logo: ""
+  logo: /images/uploads/66856558_1054362901424289_1134833468883075072_n.png
   summaryLength: 100
-  googleAnalytics: <GOOGLE ANALYTICS ID>
+  googleAnalytics: ""
   about:
-    name: Sid吸管
-    image: /images/sid.jpg
-    position: Frontend Engineer
-    bio: 吸管就是拿來Sid
-  hostname: https://sidstraw.dev/
+    name: 山谷先生
+    image: /images/uploads/66856558_1054362901424289_1134833468883075072_n.png
+    position: ""
+    bio: 曾任職花旗銀行、玉山銀行理財專員 XQ全球贏家官方合作講師 擁有10年實務投資經驗 擅長籌碼選股與技術分析
+      以深入淺出的方式教學，讓投資人以輕鬆、快樂的方式學習理財與投資
+  hostname: http://mr-valley.com/
   sitemap: true
   socialMedia:
-    - type: github
-      link: https://github.com/sidstraw/
     - type: facebook
-      link: https://facebook.com/j80304xz/
-    - type: linkedin
-      link: https://www.linkedin.com/in/sidstraw/
+      link: https://www.facebook.com/mrvalley.w/
