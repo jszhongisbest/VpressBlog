@@ -1,0 +1,109 @@
+backend:
+  name: github
+  repo: jszhongisbest/VpressBlog   # Path to your GitHub repository
+
+locale: 'zh_Hant'
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# This line should *not* be indented
+media_folder: ".vuepress/public/images/uploads" # Media files will be stored in the repo under images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+    - name: "blog" # Used in routes, e.g., /admin/collections/blog
+      label: "Blog" # Used in the UI
+      folder: "_posts" # The path to the folder where the documents are stored
+      create: true # Allow users to create new documents in this collection
+      slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+      fields: # The fields for each document, usually in front matter
+        - {label: "title", name: "title", widget: "string", default: "100"}
+        - {label: "date", name: "date", widget: "date", format: 'YYYY-MM-DD'}
+        - {label: "slug", name: "slug", widget: ""}
+        - {label: "tags", name: "tags", widget: "list", required: false}
+        - {label: "description", name: "description", widget: "text", required: false}
+        - {label: "image", name: "image", widget: "image", required: false}
+        - {label: "Draft", name: "draft", widget: "boolean", default: true, required: false}
+        - {label: "featured", name: "featured", widget: "boolean", default: false, required: false}
+        - {label: 'Blog post content', name: 'body', widget: 'markdown', required: false}
+
+    - name: "config" # Used in routes, e.g., /admin/collections/blog
+      label: "Setting" # Used in the UI
+      editor:
+        preview: false
+      files:
+        - name: "site-config"
+          label: "網站設定"
+          file: ".vuepress/config.yml"
+          fields:
+            - {label: "網站標題", name: "title", widget: "string"}
+            - {label: "網站描述", name: "description", widget: "text"}
+            - label: "head"
+              name: "head"
+              widget: "hidden"
+              default:
+                - - meta
+                  - name: viewport
+                    content: width=device-width,user-scaleble=0,initial-scale=1.0,maximum-scale=1.0
+                - - link
+                  - rel: stylesheet
+                    href: https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900
+                - - link
+                  - rel: stylesheet
+                    href: https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css
+
+            - label: "locales"
+              name: "locales"
+              widget: "hidden"
+              default:
+                "/":
+                  lang: zh-TW
+            - label: "主題設定"
+              name: "themeConfig"
+              widget: "object"
+              # collapsed: true
+              fields: 
+                - {label: "是否開啟內文預覽", name: "summary", widget: "boolean", required: false}
+                - {label: "內文預覽字數設定", name: "summaryLength", widget: "number", default: "100", value_type: "int", required: false}
+                - {label: "首頁封面圖片", name: "heroImage", widget: "image", required: false}
+                - {label: "LOGO 圖片", name: "logo", widget: "image", required: false}
+                - label: "社群媒體設定"
+                  name: "socialMedia"
+                  widget: "list"
+                  required: false
+                  fields: 
+                    - {label: 媒體 icon, name: type, widget: string, hint: "facebook、instagram、youtube、github、linkedin...等，可至 https://cdn.materialdesignicons.com/5.4.55/ 搜尋適合 icon"}
+                    - {label: link, name: link, widget: string}
+                - label: "網站色系"
+                  name: "color"
+                  widget: "object"
+                  required: false
+                  fields: 
+                    - {label: "網站主要色系", name: "$accentColor", widget: "string", default: ""}
+                    - {label: "網站次要色系", name: "$secondaryColor", widget: "string", default: ""}
+                # - {label: "nav", name: "nav", widget: "string"}
+                - label: "導航列設定"
+                  name: "nav"
+                  widget: "list"
+                  required: false
+                  fields: 
+                    - {label: 連結顯示名稱, name: text, widget: string}
+                    - {label: link, name: link, widget: string}
+                    - {label: icon, name: icon, widget: string}
+                - label: "關於我"
+                  name: "about"
+                  widget: "object"
+                  required: false
+                  fields: 
+                    - {label: "稱呼", name: "name", widget: "string", default: "Sid", required: false}
+                    - {label: "個人照片", name: "image", widget: "image", default: "", required: false}
+                    - {label: "職稱", name: "position", widget: "string", default: "", required: false}
+                    - {label: "人物介紹", name: "bio", widget: "string", default: "", required: false}
+                - {label: "disqus 討論區 ID", name: "disqus", widget: "string", required: false}
+                - {label: "GoogleAnalytics 分析資源代碼", name: "googleAnalytics", widget: "string", required: false}
+                - {label: "是否設置 sitemap", name: "sitemap", widget: "boolean", required: false}
+                - {label: "主機網址", name: "hostname", widget: "string", required: false, hint: "若啟動 Sitemap 設置則本項必填，填寫格式範例： https://sidstraw.dev/"}
+
+
+
